@@ -1,3 +1,4 @@
+/* General reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +10,23 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: whitesmoke;
+  background: #0d0d0d;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(45deg, #0d0d0d, #1a1a1a, #333, #0d0d0d);
+  background-size: 400% 400%;
+  animation: backgroundShift 8s ease infinite;
+}
+
+@keyframes backgroundShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .wrapper {
@@ -21,13 +38,35 @@ body {
 
 h2 {
   font-size: 2em;
-  color: #e94d58;
-  margin: 15px 0;
+  color: #ff33cc; /* Pink */
+  text-shadow: 0 0 10px #ff33cc, 0 0 20px #ff33cc;
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0%, 100% {
+    clip-path: inset(0 0 0 0);
+  }
+  25% {
+    clip-path: inset(0 10% 0 0);
+    transform: translateX(-10px);
+  }
+  50% {
+    clip-path: inset(0 0 20% 0);
+    transform: translateX(10px);
+  }
 }
 
 .gif {
   width: 100%;
   max-width: 300px;
+  border: 2px solid #33ff99; /* Cyan */
+  box-shadow: 0 0 10px #33ff99, 0 0 20px #33ff99;
+  transition: transform 0.3s ease;
+}
+
+.gif:hover {
+  transform: scale(1.1);
 }
 
 .btn-group {
@@ -44,18 +83,35 @@ button {
   border-radius: 30px;
   outline: none;
   cursor: pointer;
-  box-shadow: 0 2px 4px gray;
-  border: 2px solid #e94d58;
+  box-shadow: 0 2px 4px #333;
+  border: 2px solid #00b3ff; /* Neon blue */
+  transition: background 0.3s ease;
+  animation: flicker 1.5s infinite;
 }
 
 button.yes-btn {
-  background: #e94d58;
+  background: #00b3ff; /* Neon blue */
 }
 
 button.no-btn {
-  background: white;
-  color: #e94d58;
+  background: #0d0d0d;
+  color: #ff33cc; /* Pink */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  border: 2px solid #ff33cc;
+}
+
+button:hover {
+  background: #33ff99; /* Neon green */
+  box-shadow: 0 0 20px #33ff99, 0 0 30px #33ff99;
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
