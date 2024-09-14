@@ -3,10 +3,13 @@ const noBtn = document.querySelector(".no-btn");
 const question = document.querySelector(".question");
 const gif = document.querySelector(".gif");
 
-// Play sound function
+// Play sound function with error handling
 function playSound() {
   const audio = new Audio('cyberpunk-sound.mp3'); // Ensure this path is correct
-  audio.play();
+  
+  audio.play().catch(error => {
+    console.error('Error playing sound:', error);
+  });
 }
 
 // Play sound as soon as the page loads
