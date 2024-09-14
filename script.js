@@ -6,16 +6,21 @@ const gif = document.querySelector(".gif");
 // Counter to track the number of clicks on the Yes button
 let yesClickCount = 0;
 
+// Play sound function
+function playSound() {
+  const audio = new Audio('cyberpunk-sound.mp3'); // Add your own sound file here
+  audio.play();
+}
+
 // Change text and gif when the Yes button is clicked
 yesBtn.addEventListener("click", () => {
+  playSound(); // Play sound on Yes click
   yesClickCount++;
 
   if (yesClickCount === 1) {
-    // First click: Change text and gif
     question.innerHTML = "Go watch Cyberpunk: Edgerunners💔😔";
     gif.src = "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmdxanZpb2w4Y2thMXVycnJsbG14dG5scWNkN25hcndwN2t1cGMydiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nA2ZyB2qByO2pacHZI/giphy.gif";
   } else if (yesClickCount === 2) {
-    // Second click: Redirect to YouTube video
     window.location.href = 'https://www.youtube.com/watch?v=KvMY1uzSC1E'; // Replace with your desired YouTube URL
   }
 });
