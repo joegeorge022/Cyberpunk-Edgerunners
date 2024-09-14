@@ -3,15 +3,14 @@ const noBtn = document.querySelector(".no-btn");
 const question = document.querySelector(".question");
 const gif = document.querySelector(".gif");
 
-// Create a new Audio object and set it to loop
-const backgroundSound = new Audio('cyberpunk-sound.mp3'); // Ensure this path is correct
-backgroundSound.loop = true;
-backgroundSound.volume = 0.5; // Adjust volume as needed
+// Play sound function
+function playSound() {
+  const audio = new Audio('cyberpunk-sound.mp3'); // Ensure this path is correct
+  audio.play();
+}
 
-// Play the sound when the page loads
-window.addEventListener('load', () => {
-  backgroundSound.play();
-});
+// Play sound as soon as the page loads
+window.addEventListener('load', playSound);
 
 // Counter to track the number of clicks on the Yes button
 let yesClickCount = 0;
