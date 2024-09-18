@@ -1,3 +1,5 @@
+//I've added these comments for showing the purpose of each section
+
 const yesBtn = document.querySelector(".yes-btn");
 const noBtn = document.querySelector(".no-btn");
 const question = document.querySelector(".question");
