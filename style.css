@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron';
   background: linear-gradient(45deg, #000428, #004e92, #8a2be2, #ff00ff);
   background-size: 400% 400%;
   animation: backgroundShift 10s ease infinite;
