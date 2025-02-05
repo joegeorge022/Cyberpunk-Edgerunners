@@ -20,7 +20,7 @@ noBtn.addEventListener("mouseover", () => {
   const wrapper = document.querySelector(".wrapper");
   const wrapperRect = wrapper.getBoundingClientRect();
   const noBtnRect = noBtn.getBoundingClientRect();
-
+  const margin = 50;
   const maxX = wrapperRect.width - noBtnRect.width;
   const maxY = wrapperRect.height - noBtnRect.height;
 
