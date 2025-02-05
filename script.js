@@ -5,15 +5,6 @@ const gif = document.querySelector(".gif");
 
 let yesClickCount = 0;
 
-function playSound() {
-  const audio = new Audio('cyberpunk-sound.mp3');
-  audio.play();
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  playSound();
-});
-
 yesBtn.addEventListener("click", () => {
   yesClickCount++;
 
